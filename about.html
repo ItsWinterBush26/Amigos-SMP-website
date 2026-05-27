@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AmigosSMP | About</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar always-dark" id="navbar">
+    <a href="index.html" class="nav-brand">Amigos
+    SMP</a>
+    <div class="nav-links">
+      <a href="index.html"  class="nav-link">Home</a>
+      <a href="videos.html" class="nav-link">Media</a>
+      <a href="about.html"  class="nav-link active">About</a>
+    </div>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content fade-in">
+      <span class="hero-eyebrow">Our Story</span>
+      <h1 class="page-header-title">About<em> Us</em></h1>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">Amigos<em>SMP.</em></h2>
+          <p class="section-text">
+            Amigos SMP is a whitelisted Minecraft survival multiplayer server built around friendship, creativity, and community. We have been crafting shared worlds and unforgettable moments together since our very first season.
+          </p>
+          <p class="section-text" style="margin-top:1.2rem;">
+            Now in <strong>Season V</strong>, we continue to push the boundaries of what a close-knit SMP can be — with custom lore, player-driven events, and a community that always has each other's backs.
+          </p>
+        </div>
+        <div class="about-stats fade-in">
+          <div class="stat-card">
+            <span class="stat-number">V</span>
+            <span class="stat-label">Seasons</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Online</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Adventures</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <div class="section-label" style="text-align:center;">What Drives Us</div>
+      <h2 class="section-title" style="text-align:center; margin-bottom:3rem;">Our <em>Values.</em></h2>
+      <div class="values-grid">
+        <div class="value-card fade-in">
+          <div class="value-icon">⚔</div>
+          <h3 class="value-title">Adventure</h3>
+          <p class="value-text">Every season brings new challenges, new biomes, and new battles. We live for the thrill of the unknown.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="value-icon">🤝</div>
+          <h3 class="value-title">Community</h3>
+          <p class="value-text">We are more than players — we are amigos. The friendships built here last far beyond any season.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="value-icon">🏗</div>
+          <h3 class="value-title">Creativity</h3>
+          <p class="value-text">From mega-builds to redstone contraptions, our members constantly raise the bar for what is possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner fade-in">
+        <div class="section-label">Season V</div>
+        <h2 class="section-title">Ready to Join the <em>Adventure?</em></h2>
+        <p class="section-text" style="margin-bottom:2.5rem;">The server is online 24/7. Come say hi — the amigos are always waiting.</p>
+        <a href="index.html" class="hero-btn">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-brand">Amigos SMP</div>
+    <p class="footer-year">Season V</p>
+    <p class="footer-credit">© 2026 Amigos SMP Devs</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const toggle = document.getElementById('navToggle');
+    const links  = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
