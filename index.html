@@ -28,10 +28,9 @@
       <p class="hero-tagline">Sup Amigos</p>
       <p class="hero-sub">Official Website of Amigos SMP</p>
       <a href="https://discord.gg/jYrkQk96mW" class="hero-btn">Discord</a>
-      <br>
-      <input class="hero-btn" type="text" value="185.207.166.43:23280" id="ipAdress">
-      <button class="hero-btn" onclick="copyToClipboard()">Copy IP Address</button>
-    </div>
+      <button class="hero-btn" onclick="copyText()">Copy IP</button>
+      <p class="hero-sub" id="text">185.207.166.43:23280</p>
+      </div>
   </section>
   
   <section class="welcome-section">
@@ -51,20 +50,17 @@
   </footer>
 
   <script>
-    function copyToClipboard() {
-  // Get the text field
-  var copyText = document.getElementById("ipAdress");
+function copyText() {
+    const text = document.getElementById("text").innerText;
 
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
-
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
-    }
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("Copied!");
+        })
+        .catch(err => {
+            console.error("Failed to copy:", err);
+        });
+}
   </script>
 </body>
 </html>
