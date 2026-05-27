@@ -27,7 +27,9 @@
       <h1 class="hero-title">Amigos SMP</h1>
       <p class="hero-tagline">Sup Amigos</p>
       <p class="hero-sub">Official Website of Amigos SMP</p>
-      <a href="https://discord.gg/jYrkQk96mW" class="hero-btn">Join Now</a>
+      <a href="https://discord.gg/jYrkQk96mW" class="hero-btn">Discord</a>
+      <input class="hero-btn" type="text" value="185.207.166.43:23280" id="ipAdress">
+      <button onclick="copyToClipboard()">Copy IP Address</button>
     </div>
   </section>
   
@@ -46,5 +48,22 @@
     <p class="footer-year">Season V</p>
     <p class="footer-credit">© 2026 Amigos SMP Devs</p>
   </footer>
+
+  <script>
+    function copyToClipboard() {
+  // Get the text field
+  var copyText = document.getElementById("ipAdress");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+    }
+  </script>
 </body>
 </html>
